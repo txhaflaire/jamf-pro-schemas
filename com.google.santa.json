@@ -1,0 +1,362 @@
+{
+	"title": "com.google.santa",
+	"description": "",
+	"properties": {
+        "ClientAuthCertificateIssuerCN": {
+            "title": "Client Certificate Issuer Common Name",
+            "description": "If set, this is the Issuer Name of a certificate in the System keychain to be used for sync authentication. The corresponding private key must also be in the keychain.",
+            "property_order": 5,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ServerAuthRootsFile": {
+            "title": "ServerAuthRootsFile",
+            "description": "The same as ServerAuthRootsData but is a path to a file on disk containing the PEM data.",
+            "property_order": 10,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ModeNotificationMonitor": {
+            "title": "Monitor Notification Text",
+            "description": "The notification text to display when the client goes into Monitor mode. Defaults to Switching into Monitor mode.",
+            "property_order": 15,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "SyncBaseURL": {
+            "title": "Sync Server URL",
+            "description": "The base URL of the sync server.",
+            "property_order": 20,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EventDetailURL": {
+            "title": "Event Detail URL",
+            "description": "See the EventDetailURL section below.",
+            "property_order": 25,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MachineOwnerKey": {
+            "title": "Machine Owner Key",
+            "description": "The key to use on MachineOwnerPlist.",
+            "property_order": 30,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ClientAuthCertificateCN": {
+            "title": "Client Certificate Common Name",
+            "description": "If set, this is the Common Name of a certificate in the System keychain to be used for sync authentication. The corresponding private key must also be in the keychain.",
+            "property_order": 35,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "BlacklistRegex": {
+            "title": "Denylist Regex",
+            "description": "",
+            "property_order": 40,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "UnknownBlockMessage": {
+            "title": "Unknown Block Message",
+            "description": "In Lockdown mode this is the message shown to the user when an unknown binary is blocked. If this message is not configured a reasonable default is provided.",
+            "property_order": 45,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EventLogPath": {
+            "title": "Event Log Path",
+            "description": "If EventLogType is set to filelog, EventLogPath will provide the path to save logs. Defaults to /var/db/santa/santa.log. If you change this value ensure you also update com.google.santa.newsyslog.conf with the new path.",
+            "property_order": 50,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "WhitelistRegex": {
+            "title": "Allowlist Regex",
+            "description": "",
+            "property_order": 55,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EnableMachineIDDecoration": {
+            "title": "Enable Machine ID Decoration",
+            "description": "If YES, this appends the MachineID to the end of each log line. Defaults to NO.",
+            "property_order": 60,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "ClientAuthCertificatePassword": {
+            "title": "Client Certificate Password",
+            "description": "Contains the password for the PKCS#12 certificate.",
+            "property_order": 65,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "BannedBlockMessage": {
+            "title": "Banned Block Message",
+            "description": "This is the message shown to the user when a binary is blocked because of a rule if that rule doesn't provide a custom message. If this is not configured a reasonable default is provided.",
+            "property_order": 70,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EnablePageZeroProtection": {
+            "title": "Enable Page Zero Protection",
+            "description": "Enable __PAGEZERO protection, defaults to YES. If this flag is set to YES, 32-bit binaries that are missing the __PAGEZERO segment will be blocked even in MONITOR mode, unless the binary is allowed by an explicit rule.",
+            "property_order": 75,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "ClientAuthCertificateFile": {
+            "title": "Client Certificate File Path",
+            "description": "If set, this contains the location of a PKCS#12 certificate to be used for sync authentication.",
+            "property_order": 80,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MachineIDKey": {
+            "title": "Machine ID Key",
+            "description": "The key to use on MachineIDPlist.",
+            "property_order": 85,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ClientMode": {
+            "title": "Client Mode",
+            "description": "1 = MONITOR, 2 = LOCKDOWN, defaults to MONITOR",
+            "property_order": 90,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Monitor", "Lockdown"]
+                    },
+                    "enum": [1,2]
+                }
+            ]
+        },
+        "BlockedPathRegex": {
+            "title": "BlockedPathRegex",
+            "description": "A regex to block if the binary or certificate scopes did not allow/block an execution. Regexes are specified in ICU format.",
+            "property_order": 95,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MachineOwner": {
+            "title": "Machine Owner",
+            "description": "The machine owner.",
+            "property_order": 100,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "FileChangesRegex": {
+            "title": "File Changes Regex",
+            "description": "The regex of paths to log file changes. Regexes are specified in ICU format.",
+            "property_order": 105,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MachineID": {
+            "title": "Machine ID",
+            "description": "The machine ID.",
+            "property_order": 110,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EventDetailText": {
+            "title": "Event Detail Text",
+            "description": "Related to the above property, this string represents the text to show on the button.",
+            "property_order": 115,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MoreInfoURL": {
+            "title": "More Info URL",
+            "description": "The URL to open when the user clicks More Info... when opening Santa.app. If unset, the button will not be displayed.",
+            "property_order": 120,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AllowedPathRegex": {
+            "title": "Allowlist Regex",
+            "description": "A regex to allow if the binary or certificate scopes did not allow/block execution. Regexes are specified in ICU format.",
+            "property_order": 125,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ModeNotificationLockdown": {
+            "title": "Lockdown Notification Text",
+            "description": "The notification text to display when the client goes into Lockdown mode. Defaults to Switching into Lockdown mode.",
+            "property_order": 130,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EventLogType": {
+            "title": "Event Log Type",
+            "description": "Defines how event logs are stored. Options are 1) syslog: Sent to ASL or ULS (if built with the 10.12 SDK or later). 2) filelog: Sent to a file on disk. Use EventLogPath to specify a path. Defaults to filelog",
+            "property_order": 135,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": ["filelog", "syslog"]
+                    },
+                    "enum": ["filelog", "syslog"]
+                }
+            ]
+        },
+        "MachineOwnerPlist": {
+            "title": "Machine Owner Plist",
+            "description": "The path to a plist that contains the MachineOwnerKey / value pair.",
+            "property_order": 140,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MachineIDPlist": {
+            "title": "Machine Owner Plist",
+            "description": "The path to a plist that contains the MachineOwnerKey / value pair.",
+            "property_order": 145,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+	}
+}
